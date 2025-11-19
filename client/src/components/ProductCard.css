@@ -1,0 +1,443 @@
+/* Product Card Styles - MUI Joy Inspired */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  width: 100%;
+  min-width: 250px;
+  max-width: 320px;
+}
+
+.dark .product-card {
+  background-color: #192633;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.15),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.product-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image-loading {
+  width: 100%;
+  height: 100%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-image.loaded {
+  opacity: 1;
+}
+
+.product-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+
+.product-image-error {
+  width: 100%;
+  height: 100%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+
+.fallback-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(245, 158, 11, 0.9);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.fallback-image {
+  opacity: 0.8;
+  filter: grayscale(0.2);
+}
+
+.fallback-image:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.product-content {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.product-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+}
+
+.product-category {
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark .product-category {
+  color: #9ca3af;
+}
+
+.product-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.product-title-container:hover {
+  opacity: 0.8;
+}
+
+.product-title {
+  color: #111827;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.dark .product-title {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.product-title-arrow {
+  color: #6b7280;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.product-title-container:hover .product-title-arrow {
+  transform: translateX(2px);
+}
+
+.product-price-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.product-price {
+  color: #111827;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+
+.dark .product-price {
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.product-stock {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.dark .product-stock {
+  color: #9ca3af;
+  font-size: 0.625rem;
+}
+
+.product-stock b {
+  font-weight: 600;
+  color: #dc2626;
+}
+
+.dark .product-stock b {
+  color: #ef4444;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  padding: 0.375rem 0;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+}
+
+.dark .product-details {
+  border-top-color: #374151;
+  border-bottom-color: #374151;
+}
+
+.product-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.125rem 0;
+}
+
+.detail-label {
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.dark .detail-label {
+  color: #9ca3af;
+}
+
+.detail-value {
+  font-weight: 600;
+}
+
+.battery-health-good {
+  color: #10b981;
+}
+
+.battery-health-medium {
+  color: #60a5fa;
+}
+
+.battery-health-poor {
+  color: #f97316;
+}
+
+.market-value {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+/* Enhanced styling for product details section */
+.dark .product-details {
+  background-color: #1f2937;
+  border-top-color: #374151;
+  border-bottom-color: #374151;
+}
+
+.product-detail-item .detail-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.dark .product-detail-item .detail-label {
+  color: #9ca3af;
+}
+
+.product-detail-item .detail-value {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+/* Add subtle animation for better UX */
+.product-detail-item {
+  transition: all 0.2s ease;
+}
+
+.product-detail-item:hover {
+  transform: translateX(2px);
+}
+
+/* Status Chip Styles */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.375rem;
+  border-radius: 9999px;
+  font-size: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.status-chip.battery-health-good {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.status-chip.battery-health-medium {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.status-chip.battery-health-poor {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.dark .status-chip.battery-health-good {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.dark .status-chip.battery-health-medium {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.dark .status-chip.battery-health-poor {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+/* Trust Score Meter Styles */
+.trust-score-section {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .trust-score-section {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.trust-score-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.dark .trust-score-label {
+  color: #9ca3af;
+}
+
+.trust-score-meter {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.dark .trust-score-meter {
+  background-color: #374151;
+}
+
+.trust-score-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.trust-score-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.625rem;
+}
+
+.trust-score-value {
+  font-weight: 700;
+}
+
+.trust-score-text {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.dark .trust-score-text {
+  color: #9ca3af;
+}
+
+.product-actions {
+  padding: 0.5rem;
+}
+
+.view-details-btn {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #ff9500;
+  color: #ffffff;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(255, 149, 0, 0.2);
+}
+
+.view-details-btn:hover {
+  background-color: #e68500;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .product-card {
+    min-width: 260px;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-card {
+    min-width: 270px;
+    max-width: 310px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-card {
+    min-width: 280px;
+    max-width: 320px;
+  }
+}

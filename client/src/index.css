@@ -1,0 +1,65 @@
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+html {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* Form Input Styles */
+.form-input {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  height: 100%;
+  padding: 0.9375rem 0.5rem 0.9375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #1173d4;
+  box-shadow: 0 0 0 3px rgba(17, 115, 212, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Dark mode styles */
+.dark .form-input {
+  color: #ffffff;
+  background-color: #192633;
+  border-color: #324d67;
+}
+
+.dark .form-input::placeholder {
+  color: #92adc9;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}

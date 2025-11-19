@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test Product Data</title>
+  </head>
+  <body>
+    <h1>Testing Product Data Storage</h1>
+    <button onclick="addTestData()">Add Test Data</button>
+    <button onclick="viewTestData()">View Test Data</button>
+    <button onclick="clearTestData()">Clear Test Data</button>
+    <div id="output"></div>
+
+    <script>
+      function addTestData() {
+        const testData = {
+          1: {
+            battery_health: 85,
+            market_value: 299.99,
+            timestamp: Date.now(),
+          },
+          2: {
+            battery_health: 92,
+            market_value: 450.0,
+            timestamp: Date.now(),
+          },
+        };
+
+        localStorage.setItem(
+          "productAdditionalFields",
+          JSON.stringify(testData),
+        );
+        document.getElementById("output").innerHTML =
+          "<h2>Test data added!</h2>";
+      }
+
+      function viewTestData() {
+        const storedData = localStorage.getItem("productAdditionalFields");
+        const output = document.getElementById("output");
+
+        if (storedData) {
+          output.innerHTML =
+            "<h2>Current stored data:</h2><pre>" +
+            JSON.stringify(JSON.parse(storedData), null, 2) +
+            "</pre>";
+        } else {
+          output.innerHTML = "<h2>No stored data found</h2>";
+        }
+      }
+
+      function clearTestData() {
+        localStorage.removeItem("productAdditionalFields");
+        document.getElementById("output").innerHTML =
+          "<h2>Test data cleared!</h2>";
+      }
+    </script>
+  </body>
+</html>

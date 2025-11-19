@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test LocalStorage</title>
+  </head>
+  <body>
+    <h1>Testing LocalStorage for Product Fields</h1>
+    <div id="output"></div>
+
+    <script>
+      const storedData = localStorage.getItem("productAdditionalFields");
+      const output = document.getElementById("output");
+
+      if (storedData) {
+        output.innerHTML =
+          "<h2>Found stored data:</h2><pre>" +
+          JSON.stringify(JSON.parse(storedData), null, 2) +
+          "</pre>";
+      } else {
+        output.innerHTML = "<h2>No stored data found in localStorage</h2>";
+      }
+    </script>
+  </body>
+</html>

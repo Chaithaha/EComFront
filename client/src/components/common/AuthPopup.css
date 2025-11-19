@@ -1,0 +1,121 @@
+/* Auth Popup Styles */
+.auth-popup-overlay {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.auth-popup-overlay--visible {
+  opacity: 1;
+}
+
+.auth-popup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  min-width: 200px;
+  max-width: 300px;
+  justify-content: center;
+  animation: popupSlide 0.3s ease-out;
+  pointer-events: auto;
+}
+
+/* Success state (authenticated) */
+.auth-popup--success {
+  background: linear-gradient(135deg, var(--success) 0%, #34d058 100%);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+/* Warning state (unauthenticated) */
+.auth-popup--warning {
+  background: linear-gradient(135deg, var(--warning) 0%, #f59e0b 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.auth-popup-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.auth-popup-message {
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Animation */
+@keyframes popupSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+.dark .auth-popup--success {
+  background: linear-gradient(135deg, var(--success) 0%, #2ea043 100%);
+  border: 1px solid rgba(40, 167, 69, 0.4);
+}
+
+.dark .auth-popup--warning {
+  background: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.dark .auth-popup-icon {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .auth-popup {
+    font-size: 12px;
+    padding: 6px 12px;
+    min-width: 180px;
+    max-width: 260px;
+  }
+
+  .auth-popup-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+  }
+
+  .auth-popup-overlay {
+    top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-popup {
+    font-size: 11px;
+    padding: 5px 10px;
+    min-width: 160px;
+    max-width: 240px;
+  }
+}
