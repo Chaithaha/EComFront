@@ -35,6 +35,12 @@ export const AuthProvider = ({ children }) => {
           }
         } catch (err) {
           console.error("Auth state change error:", err);
+          // Clear corrupted session on auth errors
+          if (err.message?.includes("Invalid Refresh Token") || err.code === 400) {
+            await supabase.auth.signOut();
+            setUser(null);
+            setError("Session expired. Please sign in again.");
+          }
         } finally {
           setLoading(false);
         }

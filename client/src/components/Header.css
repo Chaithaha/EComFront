@@ -202,7 +202,6 @@
   font-weight: 500;
   line-height: 1.5;
   text-decoration: none;
-  transition: var(--mui-transition);
   position: relative;
   padding: 0.5rem 0;
   border-radius: var(--mui-border-radius);
@@ -224,7 +223,6 @@
   width: 0;
   height: 2px;
   background-color: var(--mui-primary);
-  transition: width 0.3s ease;
   border-radius: 2px;
 }
 
@@ -252,7 +250,6 @@
   border: 1px solid var(--mui-divider);
   border-radius: var(--mui-border-radius);
   cursor: pointer;
-  transition: var(--mui-transition);
   min-width: 160px;
   justify-content: space-between;
 }
@@ -277,7 +274,6 @@
 .dropdown-arrow {
   font-size: 1rem;
   color: var(--mui-text-secondary);
-  transition: var(--mui-transition);
 }
 
 .dropdown-menu {
@@ -291,18 +287,6 @@
   min-width: 180px;
   z-index: 1000;
   overflow: hidden;
-  animation: dropdownSlide 0.2s ease-out;
-}
-
-@keyframes dropdownSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .dropdown-item {
@@ -317,7 +301,6 @@
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: var(--mui-transition);
   text-align: left;
 }
 
@@ -386,7 +369,6 @@
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.015em;
-  transition: var(--mui-transition);
   border: none;
   outline: none;
   box-shadow: var(--mui-shadow-1);
@@ -430,7 +412,6 @@
   letter-spacing: 0.015em;
   min-width: 0;
   padding: 0 0.625rem;
-  transition: var(--mui-transition);
   box-shadow: var(--mui-shadow-1);
 }
 
@@ -441,7 +422,6 @@
 
 .btn-icon:hover {
   background-color: var(--mui-divider);
-  box-shadow: var(--mui-shadow-2);
 }
 
 .dark .btn-icon:hover {
@@ -463,7 +443,3 @@
 }
 
 /* Animation for smooth transitions */
-.btn,
-.btn-icon {
-  transition: var(--mui-transition);
-}

@@ -1,24 +1,28 @@
-const API_URL = process.env.REACT_APP_API_URL || '${import.meta.env.REACT_APP_API_URL}';
 import { supabase } from "./supabase";
+const API_URL =
+  process.env.REACT_APP_API_URL || import.meta.env.REACT_APP_API_URL;
 
 // Helper function to get the current authentication token from Supabase
 const getAuthToken = async () => {
   try {
     // Get current session from Supabase
-    const { data: { session }, error } = await supabase.auth.getSession();
-    
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.getSession();
+
     if (error) {
       console.error("Error getting auth token:", error);
       return null;
     }
-    
+
     const token = session?.access_token;
     if (token) {
       console.log("Found Supabase token:", token.substring(0, 20) + "...");
     } else {
       console.log("No auth token found in Supabase session");
     }
-    
+
     return token || null;
   } catch (error) {
     console.error("Error getting auth token:", error);

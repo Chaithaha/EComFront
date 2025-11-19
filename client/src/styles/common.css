@@ -46,18 +46,9 @@
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0.015em;
-  transition: all 0.2s ease;
   border: none;
   outline: none;
   text-decoration: none;
-}
-
-.btn-base:hover {
-  transform: translateY(-1px);
-}
-
-.btn-base:active {
-  transform: translateY(0);
 }
 
 /* Button variants */
@@ -67,20 +58,10 @@
   box-shadow: 0 2px 4px rgba(255, 149, 0, 0.2);
 }
 
-.btn-primary:hover {
-  background-color: #e68500;
-  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
-}
-
 .btn-secondary {
   background-color: #f8f9fa;
   color: #495057;
   border: 1px solid #dee2e6;
-}
-
-.btn-secondary:hover {
-  background-color: #e9ecef;
-  border-color: #adb5bd;
 }
 
 .btn-danger {
@@ -88,17 +69,9 @@
   color: white;
 }
 
-.btn-danger:hover {
-  background-color: #c82333;
-}
-
 .btn-success {
   background-color: #28a745;
   color: white;
-}
-
-.btn-success:hover {
-  background-color: #218838;
 }
 
 /* Button sizes */
@@ -139,11 +112,6 @@
   transition: all 0.2s ease;
 }
 
-.btn-icon:hover {
-  background-color: #e9ecef;
-  border-color: #adb5bd;
-}
-
 .btn-icon:active {
   transform: scale(0.95);
 }
@@ -155,20 +123,10 @@
   border-color: #4b5563;
 }
 
-.dark .btn-secondary:hover {
-  background-color: #4b5563;
-  border-color: #6b7280;
-}
-
 .dark .btn-icon {
   background-color: #374151;
   color: #ffffff;
   border-color: #4b5563;
-}
-
-.dark .btn-icon:hover {
-  background-color: #4b5563;
-  border-color: #6b7280;
 }
 
 /* Focus styles for accessibility */

@@ -33,11 +33,28 @@ const apiClient = {
       }
 
       const response = await fetch(`${API_URL}${endpoint}`, { headers });
-      const data = await response.json();
+      
+      // Handle different response types
+      let data;
+      const contentType = response.headers.get("content-type");
+      
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        // Handle non-JSON responses
+        const text = await response.text();
+        try {
+          data = JSON.parse(text);
+        } catch (e) {
+          data = { error: text || "Request failed" };
+        }
+      }
+      
       return {
         success: response.ok,
         data: response.ok ? data : null,
-        error: response.ok ? null : data.error,
+        error: response.ok ? null : (data.error || data.message || `HTTP ${response.status}`),
+        status: response.status
       };
     } catch (error) {
       return {

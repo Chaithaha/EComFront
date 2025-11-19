@@ -47,14 +47,11 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
   margin-top: 16px;
 }
 
 .chat-demo-button:hover:not(:disabled) {
   background: var(--chat-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
 }
 
 .chat-demo-button:disabled {
@@ -98,7 +95,6 @@
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
-  transition: all 0.3s ease;
 }
 
 .ws-connection-status.connected {
@@ -185,7 +181,6 @@
   border-right: 1px solid var(--chat-border);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
   box-shadow: var(--chat-shadow);
   height: 100%;
 }
@@ -216,7 +211,6 @@
   border: 1px solid var(--chat-border);
   border-radius: var(--chat-radius);
   font-size: 14px;
-  transition: border-color 0.3s ease;
   box-sizing: border-box;
   background-color: var(--chat-bg-secondary);
   color: var(--chat-text-primary);
@@ -252,7 +246,6 @@
   margin-bottom: 5px;
   border-radius: var(--chat-radius-lg);
   cursor: pointer;
-  transition: all 0.2s ease;
   border: 1px solid transparent;
   background-color: var(--chat-bg);
 }
@@ -387,7 +380,6 @@
   padding: 8px;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.2s ease;
   color: var(--chat-text-tertiary);
 }
 
@@ -568,7 +560,6 @@
   max-height: 120px;
   min-height: 48px;
   line-height: 1.4;
-  transition: all 0.3s ease;
   background-color: var(--chat-bg-secondary);
   color: var(--chat-text-primary);
 }
@@ -594,19 +585,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
 }
 
 .chat-input-button:hover {
   background-color: var(--chat-primary-dark);
-  transform: scale(1.05);
-  box-shadow: var(--chat-shadow);
-}
-
-.chat-input-button:active {
-  transform: scale(0.98);
 }
 
 .chat-input-button:disabled {
@@ -689,7 +673,6 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
 .chat-empty-state-button:hover {
@@ -731,7 +714,6 @@
   border-radius: var(--chat-radius);
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
 .chat-error-state-button:hover {

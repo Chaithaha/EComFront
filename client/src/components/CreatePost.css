@@ -4,22 +4,23 @@
   --create-post-max-width: 1200px;
   --create-post-padding: 3rem;
   --create-post-border-radius: 20px;
-  
+
   /* Color Variables */
   --create-post-text-primary: #1f2937;
   --create-post-text-secondary: #6b7280;
   --create-post-accent: #ff9500; /* Project standard orange */
-  
+
   /* Section Variables */
   --section-padding: 2rem;
   --section-gap: 2rem;
-  
+
   /* Form Variables */
   --form-gap: 2rem;
-  --input-padding: 1rem 1.5rem;
+  --input-padding-vertical: 1rem;
+  --input-padding-horizontal: 1.5rem;
   --input-font-size: 1rem;
   --label-font-size: 0.875rem;
-  
+
   /* Button Variables */
   --button-primary-bg: #3b82f6;
   --button-primary-hover: #2563eb;
@@ -47,7 +48,6 @@
   position: relative;
   overflow: visible;
 }
-
 
 .create-post-form h2 {
   margin: 0 0 8px 0;
@@ -146,7 +146,7 @@
 }
 
 .form-group label::before {
-  content: '';
+  content: "";
   width: 4px;
   height: 16px;
   background: #3b82f6;
@@ -160,10 +160,10 @@
 .form-group input,
 .form-group textarea,
 .form-group select {
-  padding: 1rem 1.25rem;
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
   border: 2px solid #e5e7eb;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: var(--input-font-size);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -365,11 +365,11 @@
   .create-post-form {
     padding: calc(var(--create-post-padding) * 1.33);
   }
-  
+
   .post-form {
     gap: calc(var(--form-gap) * 1.25);
   }
-  
+
   .form-group input,
   .form-group textarea,
   .form-group select {
@@ -383,7 +383,7 @@
   .create-post-form {
     padding: calc(var(--create-post-padding) * 1.17);
   }
-  
+
   .post-form {
     gap: calc(var(--form-gap) * 1.125);
   }
@@ -394,7 +394,7 @@
   .create-post-form {
     padding: var(--create-post-padding);
   }
-  
+
   .post-form {
     gap: var(--form-gap);
   }
@@ -407,7 +407,8 @@
   }
 
   .create-post-form {
-    padding: calc(var(--create-post-padding) * 0.83) calc(var(--create-post-padding) * 0.5);
+    padding: calc(var(--create-post-padding) * 0.83)
+      calc(var(--create-post-padding) * 0.5);
   }
 
   .post-form {
@@ -422,7 +423,8 @@
   }
 
   .create-post-form {
-    padding: calc(var(--create-post-padding) * 0.67) calc(var(--create-post-padding) * 0.42);
+    padding: calc(var(--create-post-padding) * 0.67)
+      calc(var(--create-post-padding) * 0.42);
     border-radius: calc(var(--create-post-border-radius) * 0.8);
   }
 
@@ -451,7 +453,8 @@
   .form-group input,
   .form-group textarea,
   .form-group select {
-    padding: calc(var(--input-padding) * 0.875);
+    padding: calc(var(--input-padding-vertical) * 0.875)
+      calc(var(--input-padding-horizontal) * 0.875);
     font-size: calc(var(--input-font-size) * 0.875);
   }
 
@@ -489,11 +492,13 @@
 /* Small mobile layout */
 @media (max-width: 480px) {
   .create-post-container {
-    padding: calc(var(--create-post-padding) * 0.33) calc(var(--create-post-padding) * 0.17);
+    padding: calc(var(--create-post-padding) * 0.33)
+      calc(var(--create-post-padding) * 0.17);
   }
 
   .create-post-form {
-    padding: calc(var(--create-post-padding) * 0.5) calc(var(--create-post-padding) * 0.33);
+    padding: calc(var(--create-post-padding) * 0.5)
+      calc(var(--create-post-padding) * 0.33);
     border-radius: calc(var(--create-post-border-radius) * 0.6);
   }
 
@@ -566,8 +571,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Success animation */

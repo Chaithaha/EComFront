@@ -28,6 +28,7 @@ const getEnv = (key, defaultValue) => {
 export const API_URL = getEnv(
   "REACT_APP_API_URL",
   "https://peechey.vercel.app",
+  "http://localhost:5000"
 );
 export const SUPABASE_URL = getEnv("REACT_APP_SUPABASE_URL");
 export const SUPABASE_KEY = getEnv("REACT_APP_SUPABASE_KEY");

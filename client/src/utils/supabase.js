@@ -20,7 +20,7 @@ if (!supabaseUrl || !supabaseKey) {
 const supabaseClient = createClient(supabaseUrl, supabaseKey, {
   auth: {
     persistSession: true,
-    autoRefreshToken: true,
+    autoRefreshToken: false, // Disable auto-refresh to prevent token conflicts
     detectSessionInUrl: true,
     storage: window.localStorage, // Let Supabase handle storage
   },
