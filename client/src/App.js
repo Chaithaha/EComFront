@@ -120,7 +120,7 @@ function AppContent() {
       <Router>
         <div className="app-container">
           <Routes>
-            <Route path="/" element={<Navigate to="https://aageyka.vercel.app/home" replace />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
 
             <Route
               path="/home"
